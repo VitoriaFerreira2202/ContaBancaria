@@ -16,9 +16,11 @@ namespace ContaBancaria
         {
             InitializeComponent();
         }
+         
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //ESTA DANDO ERRADO 
             var nome = (txtNomeTitula.Text).Trim();
             var saldo = Convert.ToDouble(txtSaldo.Text.Trim());
             var numConta = Convert.ToDouble(txtNumConta.Text.Trim()); 
@@ -29,11 +31,27 @@ namespace ContaBancaria
 
         private void checkBoxDeposito_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxDeposito.Checked = true) 
-            {
+            if (checkBoxDeposito.Checked)
+            {               
+                checkBoxSaque.Checked = false;            
+            }           
+        }
+        public void Deposito(double valor) 
+        {
+           
 
-                
-            }
+        }
+        private void checkBoxSaque_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSaque.Checked)
+            {              
+                checkBoxDeposito.Checked = false;
+            }           
+        }
+
+        private void txtDeposito_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

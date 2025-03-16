@@ -44,6 +44,7 @@
             this.checkBoxSaque = new System.Windows.Forms.CheckBox();
             this.lblResultado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +124,7 @@
             // txtSaldoResul
             // 
             this.txtSaldoResul.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldoResul.Location = new System.Drawing.Point(159, 237);
+            this.txtSaldoResul.Location = new System.Drawing.Point(101, 7);
             this.txtSaldoResul.Name = "txtSaldoResul";
             this.txtSaldoResul.Size = new System.Drawing.Size(195, 31);
             this.txtSaldoResul.TabIndex = 9;
@@ -133,7 +134,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 237);
+            this.label2.Location = new System.Drawing.Point(6, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 25);
             this.label2.TabIndex = 8;
@@ -142,17 +143,18 @@
             // txtDeposito
             // 
             this.txtDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDeposito.Location = new System.Drawing.Point(214, 274);
+            this.txtDeposito.Location = new System.Drawing.Point(144, 39);
             this.txtDeposito.Name = "txtDeposito";
-            this.txtDeposito.Size = new System.Drawing.Size(195, 31);
+            this.txtDeposito.Size = new System.Drawing.Size(141, 31);
             this.txtDeposito.TabIndex = 11;
+            this.txtDeposito.TextChanged += new System.EventHandler(this.txtDeposito_TextChanged);
             // 
             // txtSaque
             // 
             this.txtSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaque.Location = new System.Drawing.Point(188, 311);
+            this.txtSaque.Location = new System.Drawing.Point(110, 70);
             this.txtSaque.Name = "txtSaque";
-            this.txtSaque.Size = new System.Drawing.Size(195, 31);
+            this.txtSaque.Size = new System.Drawing.Size(136, 31);
             this.txtSaque.TabIndex = 13;
             // 
             // checkBoxDeposito
@@ -160,7 +162,7 @@
             this.checkBoxDeposito.AutoSize = true;
             this.checkBoxDeposito.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.checkBoxDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDeposito.Location = new System.Drawing.Point(71, 275);
+            this.checkBoxDeposito.Location = new System.Drawing.Point(11, 44);
             this.checkBoxDeposito.Name = "checkBoxDeposito";
             this.checkBoxDeposito.Size = new System.Drawing.Size(144, 29);
             this.checkBoxDeposito.TabIndex = 14;
@@ -173,12 +175,13 @@
             this.checkBoxSaque.AutoSize = true;
             this.checkBoxSaque.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.checkBoxSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSaque.Location = new System.Drawing.Point(76, 313);
+            this.checkBoxSaque.Location = new System.Drawing.Point(11, 70);
             this.checkBoxSaque.Name = "checkBoxSaque";
             this.checkBoxSaque.Size = new System.Drawing.Size(110, 29);
             this.checkBoxSaque.TabIndex = 15;
             this.checkBoxSaque.Text = "SAQUE:";
             this.checkBoxSaque.UseVisualStyleBackColor = false;
+            this.checkBoxSaque.CheckedChanged += new System.EventHandler(this.checkBoxSaque_CheckedChanged);
             // 
             // lblResultado
             // 
@@ -193,7 +196,13 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.groupBox1.Location = new System.Drawing.Point(-2, 215);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtSaque);
+            this.groupBox1.Controls.Add(this.checkBoxSaque);
+            this.groupBox1.Controls.Add(this.txtDeposito);
+            this.groupBox1.Controls.Add(this.checkBoxDeposito);
+            this.groupBox1.Controls.Add(this.txtSaldoResul);
+            this.groupBox1.Location = new System.Drawing.Point(-9, 219);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(466, 176);
             this.groupBox1.TabIndex = 17;
@@ -205,12 +214,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 361);
             this.Controls.Add(this.lblResultado);
-            this.Controls.Add(this.checkBoxSaque);
-            this.Controls.Add(this.checkBoxDeposito);
-            this.Controls.Add(this.txtSaque);
-            this.Controls.Add(this.txtDeposito);
-            this.Controls.Add(this.txtSaldoResul);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.txtNomeTitula);
@@ -222,6 +225,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
