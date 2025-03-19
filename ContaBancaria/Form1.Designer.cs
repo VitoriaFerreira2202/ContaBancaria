@@ -44,6 +44,7 @@
             this.checkBoxSaque = new System.Windows.Forms.CheckBox();
             this.lblResultado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,6 +197,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.btnCalcular);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSaque);
             this.groupBox1.Controls.Add(this.checkBoxSaque);
@@ -207,6 +209,16 @@
             this.groupBox1.Size = new System.Drawing.Size(466, 176);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(349, 84);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(99, 36);
+            this.btnCalcular.TabIndex = 16;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // Form1
             // 
@@ -250,6 +262,7 @@
         private System.Windows.Forms.CheckBox checkBoxSaque;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnCalcular;
     }
 }
 

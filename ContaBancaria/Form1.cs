@@ -16,17 +16,62 @@ namespace ContaBancaria
         {
             InitializeComponent();
         }
-         
+
+        public string nome { get; set; }
+        public double saldo { get; set; }
+        public double numConta { get; set; }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             //ESTA DANDO ERRADO 
-            var nome = (txtNomeTitula.Text).Trim();
-            var saldo = Convert.ToDouble(txtSaldo.Text.Trim());
-            var numConta = Convert.ToDouble(txtNumConta.Text.Trim()); 
-            var ContaBancaria = new ContaBancaria(nome, numConta,saldo);
-            lblResultado.Text = ContaBancaria.Exibir();
-            lblResultado.Text = txtSaldoResul.Text;
+
+
+            if (txtNomeTitula.Text == "")
+            {
+                MessageBox.Show("DIGITA O SEU NOME", "ERRO");
+                return;
+            }
+            else 
+            {
+              
+                this.nome = txtNomeTitula.Text;
+            }
+
+
+            if (Double.TryParse(txtNumConta.Text,out double ValorConta))
+            {
+
+                MessageBox.Show("DIGITA O SEU NUMERO DA CONTA ", "ERRO");
+                return;
+            }
+
+            else 
+            { 
+                this.txtNumConta= txtNumConta.Text;
+            }
+
+            // lblResultado.Text = ContaBancaria.Exibir();
+
+
+
+            if (Double.TryParse(txtSaldo.Text, out double ValorConv))
+            {
+                this.saldo = ValorConv;
+            }
+            else
+            { 
+                MessageBox.Show("VALOR ESTA INVALIDO", "ERRO");
+                return;
+            }
+
+            this.nome = (txtNomeTitula.Text).Trim();
+            // this.saldo = Convert.ToDouble(txtSaldo.Text);
+            this.numConta = Convert.ToDouble(txtNumConta.Text.Trim());
+
+            var msg = "teste";
+            var ContaBancaria = new ContaBancaria(this.nome, this.numConta, this.saldo);
+            lblResultado.Text = msg;
         }
 
         private void checkBoxDeposito_CheckedChanged(object sender, EventArgs e)
@@ -52,6 +97,11 @@ namespace ContaBancaria
         private void txtDeposito_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
