@@ -148,7 +148,6 @@
             this.txtDeposito.Name = "txtDeposito";
             this.txtDeposito.Size = new System.Drawing.Size(141, 31);
             this.txtDeposito.TabIndex = 11;
-            this.txtDeposito.TextChanged += new System.EventHandler(this.txtDeposito_TextChanged);
             // 
             // txtSaque
             // 
